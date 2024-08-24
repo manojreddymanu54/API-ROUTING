@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
+@Table(name = "gallery")
 public class Gallery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

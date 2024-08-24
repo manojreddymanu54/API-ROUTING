@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ArtJpaRepository extends JpaRepository<Art, Integer> {
-    List<Art> findByArtist(Artist artist); 
+    List<Art> findByArtist(Artist artist);
 }

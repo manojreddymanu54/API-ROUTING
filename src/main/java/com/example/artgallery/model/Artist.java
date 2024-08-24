@@ -4,7 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.*;
 
+@Entity
+@Table(name = "artist")
 public class Artist {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int artistId;
     @Column(name = "name")
@@ -47,7 +51,7 @@ public class Artist {
         return this.galleries;
     }
 
-    public void setGalleries(ArrayList<Gallery> gallery) {
+    public void setGalleries(ArrayList<Gallery> galleries) {
         this.galleries = galleries;
     }
 }
