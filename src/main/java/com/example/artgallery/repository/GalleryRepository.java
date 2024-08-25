@@ -15,6 +15,6 @@ public interface GalleryRepository {
 
     public void deleteGallery(int galleryId);
 
-    public ArrayList<Artist> getGalleryArtists(int galleryId);
+    public List<Artist> getGalleryArtists(int galleryId);
 
 }

@@ -15,7 +15,7 @@ public interface ArtistRepository {
 
     public void deleteArtist(int artistId);
 
-    public ArrayList<Gallery> getArtistGalleries(int artistId);
+    public List<Gallery> getArtistsGalleries(int artistId);
 
     public List<Art> getArtistArts(int artistId);
 }

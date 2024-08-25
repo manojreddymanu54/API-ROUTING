@@ -46,7 +46,7 @@ public class GalleryController {
 	}
 
 	@GetMapping("/galleries/{galleryId}/artists")
-	public ArrayList<Artist> getGalleryArtists(@PathVariable("galleryId") int galleryId) {
+	public List<Artist> getGalleryArtists(@PathVariable("galleryId") int galleryId) {
 		return galleryJpaService.getGalleryArtists(galleryId);
 	}
 }

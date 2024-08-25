@@ -43,7 +43,7 @@ public class ArtistJpaService implements ArtistRepository {
 		try {
 			ArrayList<Integer> galleryids = new ArrayList<>();
 
-			ArrayList<Gallery> galleries = artist.getGalleries();
+			List<Gallery> galleries = artist.getGalleries();
 			for (Gallery gallery : galleries) {
 				int id = gallery.getGalleryId();
 				galleryids.add(id);
@@ -76,7 +76,7 @@ public class ArtistJpaService implements ArtistRepository {
 
 			if (artist.getGalleries() != null) {
 				ArrayList<Integer> galleryids = new ArrayList<>();
-				ArrayList<Gallery> galleries = artist.getGalleries();
+				List<Gallery> galleries = artist.getGalleries();
 				for (Gallery gallery : galleries) {
 					int id = gallery.getGalleryId();
 					galleryids.add(id);
@@ -109,10 +109,10 @@ public class ArtistJpaService implements ArtistRepository {
 	}
 
 	@Override
-	public ArrayList<Gallery> getArtistGalleries(int artistId) {
+	public List<Gallery> getArtistsGalleries(int artistId) {
 		try {
 			Artist artist = artistJpaRepository.findById(artistId).get();
-			ArrayList<Gallery> galleries = artist.getGalleries();
+			List<Gallery> galleries = artist.getGalleries();
 			return galleries;
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);

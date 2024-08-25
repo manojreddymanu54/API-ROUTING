@@ -41,7 +41,7 @@ public class GalleryJpaService implements GalleryRepository {
 	@Override
 	public Gallery addGallery(Gallery gallery) {
 		ArrayList<Integer> artistsids = new ArrayList<>();
-		ArrayList<Artist> artists = gallery.getArtists();
+		List<Artist> artists = gallery.getArtists();
 		for (Artist artist : artists) {
 			int id = artist.getArtistId();
 			artistsids.add(id);
@@ -72,12 +72,12 @@ public class GalleryJpaService implements GalleryRepository {
 			}
 
 			if (gallery.getArtists() != null) {
-				ArrayList<Artist> artists = oldGallery.getArtists();
+				List<Artist> artists = oldGallery.getArtists();
 				for (Artist artist : artists) {
 					artist.getGalleries().remove(oldGallery);
 				}
 				ArrayList<Integer> artistsids = new ArrayList<>();
-				ArrayList<Artist> artistss = gallery.getArtists();
+				List<Artist> artistss = gallery.getArtists();
 				for (Artist artist : artistss) {
 					int id = artist.getArtistId();
 					artistsids.add(id);
@@ -107,7 +107,7 @@ public class GalleryJpaService implements GalleryRepository {
 	public void deleteGallery(int galleryId) {
 		try {
 			Gallery gallery = galleryJpaRepository.findById(galleryId).get();
-			ArrayList<Artist> artists = gallery.getArtists();
+			List<Artist> artists = gallery.getArtists();
 			for (Artist artist : artists) {
 				artist.getGalleries().remove(gallery);
 			}
@@ -119,10 +119,10 @@ public class GalleryJpaService implements GalleryRepository {
 		}
 	}
 
-	public ArrayList<Artist> getGalleryArtists(int galleryId) {
+	public List<Artist> getGalleryArtists(int galleryId) {
 		try {
 			Gallery gallery = galleryJpaRepository.findById(galleryId).get();
-			ArrayList<Artist> artists = gallery.getArtists();
+			List<Artist> artists = gallery.getArtists();
 			return artists;
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);

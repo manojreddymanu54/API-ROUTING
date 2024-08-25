@@ -18,7 +18,7 @@ public class Artist {
     @ManyToMany
     @JoinTable(name = "artist_gallery", joinColumns = @JoinColumn(name = "artistid"), inverseJoinColumns = @JoinColumn(name = "galleryid"))
     @JsonIgnoreProperties("artists")
-    private ArrayList<Gallery> galleries = new ArrayList<>();
+    private List<Gallery> galleries;
 
     public Artist() {
     }
@@ -47,7 +47,7 @@ public class Artist {
         this.genre = genre;
     }
 
-    public ArrayList<Gallery> getGalleries() {
+    public List<Gallery> getGalleries() {
         return this.galleries;
     }
 

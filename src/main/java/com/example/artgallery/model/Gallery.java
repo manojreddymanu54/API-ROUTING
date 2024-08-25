@@ -17,7 +17,7 @@ public class Gallery {
     private String location;
     @ManyToMany(mappedBy = "galleries")
     @JsonIgnoreProperties("galleries")
-    private ArrayList<Artist> artists = new ArrayList<>();
+    private List<Artist> artists;
 
     public Gallery() {
     }
@@ -46,7 +46,7 @@ public class Gallery {
         this.location = location;
     }
 
-    public ArrayList<Artist> getArtists() {
+    public List<Artist> getArtists() {
         return this.artists;
     }
 
