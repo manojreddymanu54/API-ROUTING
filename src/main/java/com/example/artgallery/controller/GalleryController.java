@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.artgallery.service.*;
 import com.example.artgallery.model.*;
-import com.example.artgallery.service.*;
 
 @RestController
 public class GalleryController {
@@ -21,7 +20,7 @@ public class GalleryController {
 	private GalleryJpaService galleryJpaService;
 
 	@GetMapping("/galleries")
-	public ArrayList<Gallery> getGallerys() {
+	public ArrayList<Gallery> getGalleries() {
 		return galleryJpaService.getGalleries();
 	}
 
